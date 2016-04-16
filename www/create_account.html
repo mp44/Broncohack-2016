@@ -8,8 +8,8 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/create_account.css" />
-        <link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-        
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
         <title>Connect</title>
 
         <!-- BootStrap Include-->
@@ -25,65 +25,78 @@
         <script src='https://cdn.firebase.com/js/client/2.1.0/firebase.js'></script>
 
     </head>
-    <body class="login_body">
-        <div class="container-fluid login_body">
-          <h3>Create a New Account</h3>
+    <body class="container-fluid">
+        <div>
+          <h3 class="white">Create a New Account</h3>
           <hr>
 
           <div class="row">
             <div class="col-xs-6">
-                <button type="button" id="button_user" class="btn btn-primary btn-block">User</button>
+                <div id="button_user">
+                  <h4 class="white">User</h4>
+                </div>
             </div>
             <div class="col-xs-6">
-                <button type="button" id="button_business" class="btn btn-primary btn-block">Business</button>
+                <div id="button_business">
+                  <h4 class="white">Business</h4>
+                </div>
             </div>
           </div>
           <br>
 
           <div id="create_account_form">
               <form>
-                  <div class="form-group row">
-                    <label for="inputFirstName" class="col-xs-2 form-control-label">First Name</label>
-                    <div class="col-xs-4">
-                      <input type="text" class="form-control" id="inputFirstName" pattern="[a-z|A-Z]*" placeholder="First Name">
-                    </div>
-                    <label for="inputLastName" class="col-xs-2 form-control-label">Last Name</label>
-                    <div class="col-xs-4">
-                      <input type="text" class="form-control" id="inputLastName" pattern="[a-z|A-Z]*" placeholder="Last Name">
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                    <label for="inputEmail" class="col-xs-3 form-control-label">Email</label>
-                    <div class="col-xs-9">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputPassword" class="col-xs-3 form-control-label">Password</label>
-                    <div class="col-xs-9">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    </div>
+                  <div class="form-group white">
+                    <label for="inputFirstName" class="form-control-label">Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" pattern="[a-z|A-Z]*" placeholder="First Name">
+                    <input type="text" class="form-control" id="inputLastName" pattern="[a-z|A-Z]*" placeholder="Last Name">
+                    <label for="inputEmail" class="form-control-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <label for="inputPassword" class="form-control-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                   </div>          
               </form>
+
+              <!-- <form>
+                <div class="form-group white">
+                  <label for="inputName" class="form-control-label">Business Information</label>
+                  <input type="text" class="form-control" id="inputName" placeholder="Business Name">
+                  <input type="text" class="form-control" id="inputYelpID" placeholder="Yelp Business Name">
+
+                  <label for="inputAddress" class="form-control-label">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Business Address">
+                  <input type="text" class="form-control" id="inputCity" pattern="[a-z|A-Z| ]*" placeholder="City">
+                  <input type="text" class="form-control" id="inputState" pattern="[a-z|A-Z| ]*" placeholder="State">
+                  <input type="text" class="form-control" id="inputZip" pattern="[0-9]{5}" placeholder="Zip">
+
+                  <label for="inputEmail" class="form-control-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail"  placeholder="Email">
+                  <label for="inputPassword" class="form-control-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+              </form> -->
           </div>
 
           <div class="button_container">
             <div class="row">
                 <div class="col-xs-6">
-                    <button type="button" id="button_back" class="btn-block btn-lg btn-primary">Back</button>
+                    <div id="button_back" class="white">
+                      <h4>Back</h4>
+                    </div>
                 </div>
                 <div class="col-xs-6">
-                    <button type="submit" id="button_create_account" class="btn-block btn-lg btn-primary">Create</button> 
+                    <div id="button_create_account" class="white">
+                      <h4>Create</h4>
+                    </div> 
                 </div>
           </div>
         </div>
+      </div>
 
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/create_account.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/create_account.js"></script>
+      <script type="text/javascript">
+          app.initialize();
+      </script>
+  </body>
 </html>

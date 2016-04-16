@@ -24,15 +24,12 @@
 
 
 
-.container-fluid{
-    background-color: rgba(0, 0, 0, .9);
-    background-image: url(../img/login_background.jpg);
-}
-
 body{
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: black;
+    background: url(../img/login_background.jpg);
 
     background-repeat: repeat-x;
     background-size: auto 100vh;
@@ -83,8 +80,15 @@ body{
 
 .button_container{
     position: relative;
-    font-size:1.5em;
-    margin-top: 65vh;
+    margin-top:50vh;
+}
+
+#button_back{
+    border: 2px solid white;
+}
+
+#button_login{
+    border: 2px solid white;
 }
 
 .event {

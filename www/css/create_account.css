@@ -22,29 +22,28 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-
+.container-fluid{
+    background-color: rgba(0, 0, 0, .9);
+    background-image: url(../img/login_background.jpg);
+}
 
 body{
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:red;
+    
+    background-repeat: repeat-x;
+    background-size: auto 100vh;
+    font-family: 'Raleway', sans-serif;
+
     text-align:center;
 
-    font-family: 'Droid Sans', arial, serif;
     color: white;
-    font-size:12px;
+    font-size:16px;
     height:100%;
     margin:0px;
     padding:0px;
     width:100%;
-}
-
-.login_body{
-    color: white;
-    background-color:#B30000;
-    height: 100%;
-    width: 100%;
 }
 
 /* Portrait layout (default) */
@@ -72,13 +71,24 @@ body{
 }
 
 #button_user{
-    background-color: green;
+    border: 2px solid white;
 }
 
 #button_business{
-    background-color: gray;
+    border: 2px solid gray;
 }
 
+#button_back{
+    border: 2px solid white;
+}
+
+#button_create_account{
+    border: 2px solid white;
+}
+
+.white{
+    color:white;
+}
 
 .btn-block:active{
     background-color: white;
@@ -86,11 +96,16 @@ body{
 
 .button_container{
     position: relative;
+    top: 1vh;
 }
 
 
 #login_button{
     margin-bottom: 10px;
+}
+
+label{
+    margin-top: 10px;
 }
 
 .event {

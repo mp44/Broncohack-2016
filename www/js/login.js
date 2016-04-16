@@ -78,25 +78,23 @@ function attemptLogin(userEmail, userPassword){
         window.localStorage.setItem("userUID", authData.uid);
 
 
-        /*
-        var ref = new Firebase("https://connect-app.firebaseio.com/"+authData.uid+"/");
+        
+        var ref = new Firebase("https://connect-app.firebaseio.com/users/"+authData.uid+"/");
         ref.on("value", function(snapshot) {
           console.log(snapshot.val());
           console.log(snapshot.val().business.name);
 
           if(snapshot.val().business.name === ""){
             console.log("Not a Business");
+            location.href = "explore_list.html";
           }
           else{
             console.log("A Business");
+            location.href = "explore_list_business.html";
           }
-
         }, function (errorObject) {
           console.log("The read failed: " + errorObject.code);
         });
-        */
-
-        location.href = "sample_explore.html";
       }
     });
 }
