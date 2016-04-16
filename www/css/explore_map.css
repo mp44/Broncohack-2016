@@ -1,0 +1,93 @@
+/***********************
+Dark-Red: #B30000;
+***********************/
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+header {
+	background-color: #B30000;
+	color: white;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 5px;
+}
+
+#map {
+	height: 85vh;
+}
+
+#event_info_window {
+	position: absolute;
+	width: 70vw;
+	height: 40vh;
+	z-index: -10;
+	top: 0;
+	margin: 25vh 12.5vw;
+	background-color: white;
+	border-radius: 4px;
+	border: 2px solid #B30000;
+	padding: 10px;
+}
+
+#event_info_window h2 {
+	color: #B30000;
+	font-size: 1em;
+	margin: 0;
+	display: inline-block;
+	max-width: 62vw;
+}
+
+#close {
+	float: right;
+	color: #B30000;
+	font-weight: bold;
+	display: inline-block;
+	padding: 1px 4px;
+}
+
+#close:hover {
+	border: 1px solid #B30000; 
+}
+
+#rating {
+	font-size: 0.8em;
+}
+
+.star {
+	height: 15px;
+	width: 15px;
+}
+
+footer {
+	background-color: #B30000;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.bottom_nav {
+	list-style: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.bottom_nav li {
+	color: white;
+	display: inline-block;
+	width: 49%;
+	text-align: center;
+	padding: 14px 0;
+}
+
+#host_image {
+	margin-top: 10px;
+	float: right;
+}

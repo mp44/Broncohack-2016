@@ -1,0 +1,70 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-image: url(../img/background.jpg);
+	background-repeat: repeat-x;
+	background-size: auto 100vh;
+	font-family: 'Raleway', sans-serif;
+}
+
+header {
+	text-align: center;
+	color: white;
+	padding: 10px 0;
+}
+
+h1 {
+	font-size: 3.5em;
+	margin: 0;
+}
+
+#events {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	max-height: 80vh;
+	overflow-y: scroll;
+}
+
+h2 {
+	font-size: 1em;
+	display: inline-block;
+	margin: 0;
+}
+
+.event {
+	background-color: white;
+	width: 90vw;
+	margin: 0 auto;
+	position: relative;
+	overflow: auto;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 4px;
+}
+
+.event_img {
+	float: right;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.rating {
+	font-size: 0.8em;
+}
+
+.star {
+	height: 15px;
+	width: 15px;
+}
+
+#load {
+	text-align: center;
+	margin-top: 20vh;
+}

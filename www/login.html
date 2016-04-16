@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        
+        <title>Connect</title>
+
+        <!-- BootStrap Include-->
+        <!-- Latest compiled and minified CSS -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+        <script src='https://cdn.firebase.com/js/client/2.1.0/firebase.js'></script>
+        
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        
+
+    </head>
+    <body class="login_body">
+        <div class="container-fluid login_body">
+          <h3>Login</h3>
+          <hr>
+          <form>
+              <div class="form-group row">
+                <label for="inputEmail" class="col-sm-2 form-control-label" >Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail" pattern="[\w|.]*@[\w]*.com" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 form-control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+              </div>
+          </form>
+
+          <div class="button_container">
+              <div class="row">
+                <div class="col-xs-6">
+                    <button type="button" id="button_back" class="btn-lg btn-block btn-primary">Back</button>
+                </div>
+                <div class="col-xs-6">
+                    <button type="button" id="button_login" class="btn-lg btn-block btn-primary">Login</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
