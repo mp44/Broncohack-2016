@@ -166,6 +166,8 @@ function attemptCreateBusinessAccount(businessName, businessAddress, businessEma
               }
             });
 
+
+            /* CREATES TEST EVENT! */
             var ref = new Firebase("https://connect-app.firebaseio.com/events/");
             ref.push({
               eventName:"Buffet Food!",
