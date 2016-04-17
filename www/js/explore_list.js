@@ -109,13 +109,15 @@ function addEvent(myData) {
 	eventName = myData.e;
 	eventUID = myData.b;
 
-	var appendStr = '<div class="event" data-toggle="modal" data-target="#myModal">\
-	<p><span style="font-size:1.3em;">' +eventName +"</span><br>"+ business.name + '<br>\
-	<img class="event_img" src="' + business.image_url +'" /></p>\
+	var appendStr = '<li class="event" data-toggle="modal" data-target="#myModal" id="'+eventUID+'">\
+	<p>' + eventName + '</p><br>\
+	<p>' + business.name + '</p>\
+	<div class="myImageDiv"><img class="event_img" src="' + business.image_url +'" /></div>\
 	<div class="event_info">'
 	+ getRating(business) +
 	'</div>\
-	</div>';
+	</li>';
+
 	$('#events').append(appendStr);
 }
 
