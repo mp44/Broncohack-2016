@@ -53,6 +53,25 @@ h2 {
 	margin: 0px;
 }
 
+h3 {
+	margin: 0px;
+}
+
+/*.modal-header
+ {
+     background-color: rgba(255,0,255, .1);
+ }
+
+ .modal-body
+ {
+     background-color: rgba(255,0,255, .1);
+ }
+
+ .modal-footer
+ {
+     background-color: rgb(255,0,255, .1);
+ }*/
+
 .event {
 	background-color: white;
 	width: 90vw;
@@ -100,6 +119,10 @@ h2 {
 	bottom: 0;
 	border-top: 1px solid white;
 	background-color: rgba(0, 0, 0, 0.7);	
+}
+
+.center{
+	text-align: center;
 }
 
 #control > div {
