@@ -126,10 +126,12 @@ function addEvent(myData) {
 	var business = myData.d;
 	var eventName = myData.e;
 	var eventUID = myData.b;
+	var eventDate = myData.date;
+	var eventRSVP = myData.a;
 
 	var appendStr = '<li class="event" data-toggle="modal" data-target="#myModal" id="'+eventUID+'">\
 	<p style="font-size:1.3em;">' + eventName + '</p><br>\
-	<p>' + business.name + '</p>\
+	<p>' + business.name + '<br> <p>'+eventDate+'&emsp; Attendees: '+eventRSVP+'</p></p>\
 	<div class="myImageDiv"><img class="event_img" src="' + business.image_url +'" /></div>\
 	<div class="event_info">'
 	+ getRating(business) +

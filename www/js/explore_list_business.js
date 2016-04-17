@@ -70,7 +70,9 @@ function setListeners() {
 		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar_b.png"/>';
 		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
 		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+		console.log("HERE");
 		sortByDate();
+		console.log("END HERE");
 	});
 
 	$("#popular").click(function() {
@@ -93,7 +95,7 @@ function setListeners() {
 	    });
 
 	    myRef.update({attendees: info});
-	    window.location.href = "explore_list.html";
+	    window.location.href = "explore_list_business.html";
 	});
 }
 
@@ -136,10 +138,12 @@ function addEvent(myData) {
 	var business = myData.d;
 	var eventName = myData.e;
 	var eventUID = myData.b;
+	var eventDate = myData.date;
+	var eventRSVP = myData.a;
 
 	var appendStr = '<li class="event" data-toggle="modal" data-target="#myModal" id="'+eventUID+'">\
 	<p style="font-size:1.3em;">' + eventName + '</p><br>\
-	<p>' + business.name + '</p>\
+	<p>' + business.name + '<br> <p>'+eventDate+'&emsp; Attendees: '+eventRSVP+'</p></p>\
 	<div class="myImageDiv"><img class="event_img" src="' + business.image_url +'" /></div>\
 	<div class="event_info">'
 	+ getRating(business) +
@@ -192,8 +196,9 @@ function getRating(business) {
 function sortByDate(){
 	console.log(events);
 	events = events.sort(function(a1, b1) {
-	    return  b1.date > a1.date;
+	    return  b1.date < a1.date;
 	});
+
 	console.log(events);
 	$('#events').html(""); //Removes events
 
