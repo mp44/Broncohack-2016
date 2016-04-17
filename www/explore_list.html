@@ -35,6 +35,16 @@
         <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
         <script src="js/oauth-1.0a.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+        <!-- Latest compiled and minified CSS 
+        <link rel="stylesheet" src="js/bootstrap/css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script> -->
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <title>Connect</title>
     </head>
     <body class="container-fluid">
@@ -47,15 +57,36 @@
             <img src="img/loader.gif" />
         </div>
 
-        <ul id="events"></ul>
-        <footer>
-            <ul id="control">
-                <li><img id="recommended" class="icon" src="icon/thumbs-up.svg"/></li>
-                <li><img id="date" class="icon" src="icon/calendar.png"/></li>
-                <li><img id="proximity" class="icon" src="icon/compass.png"/></li>
-                <li><img id="popular" class="icon" src="icon/fire.png"/></li>
-            </ul>
-        </footer>
+        <div id="events"></div>
+
+
+            <div id="control">
+                <div id="recommended"><img class="icon" src="icon/thumbs-up.png"/></div>
+                <div id="date" ><img class="icon" src="icon/calendar.png"/></div>
+                <div id="proximity" ><img class="icon" src="icon/compass.png"/></div>
+                <div id="popular"> <img class="icon" src="icon/fire.png"/></div>
+            </div>
+
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div type="button" class="close" data-dismiss="modal">&times;</div>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                    <div class="modal-footer">
+                        <div type="button" class="btn btn-default" data-dismiss="modal">Close</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <script type="text/javascript" src="js/explore_list.js"></script>
+
     </body>
 </html>

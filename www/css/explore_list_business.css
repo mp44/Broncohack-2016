@@ -100,13 +100,13 @@ h2 {
 }
 
 #logout {
-	float: right;
-	margin-right: 20px;
+	position: fixed;
+	right: 20px;
 	margin-top: 20px;
 }
 
-#button_create_event {
-	float: left;
+#addEvent {
+	position: fixed;
 	margin-left: 20px;
 	margin-top: 20px;
 }

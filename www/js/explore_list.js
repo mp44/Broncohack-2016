@@ -13,9 +13,13 @@ $(document).ready(function() {
 	var myFirebaseRef = new Firebase("https://connect-app.firebaseio.com/events");
 
 	myFirebaseRef.on("value", function(snapshot) {
+		myKeys = Object.keys(snapshot.val())
+		console.log(myKeys);
+		var count = 0;
 		snapshot.forEach(function(childSnapshot) {
 			var businessEvent = childSnapshot.val();
-			getBusinessReviews(businessEvent);
+			getBusinessReviews(businessEvent, myKeys[count]);
+			count+=1;
 		});
 	});
 });
@@ -37,10 +41,35 @@ function setListeners() {
 			console.log("no geolocation");
 			return;
 		}
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass_b.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+	});
+
+	$("#recommended").click(function() {
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up_b.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+	});
+
+	$("#date").click(function() {
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar_b.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+	});
+
+	$("#popular").click(function() {
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire_b.png"/>';
 	});
 }
 
-function getBusinessReviews(businessEvent) {
+function getBusinessReviews(businessEvent, eventUID) {
 
 	var oauth = OAuth({
 	    consumer: {
@@ -65,22 +94,28 @@ function getBusinessReviews(businessEvent) {
 	    type: request_data.method,
 	    data: oauth.authorize(request_data, token),
 	}).done(function(data) {
-	    addEvent(data);
-	    events.push(data);
+		myData = {d:data, b:eventUID, e:businessEvent.eventName}
+		console.log(myData);
+	    addEvent(myData);
+	    events.push(myData);
 	    console.log(events);
 
 	    $('#load').remove();
 	});
 }
 
-function addEvent(business) {
-	var appendStr = '<li class="event">\
-	<h2>' + business.name + '</h2>\
-	<img class="event_img" src="' + business.image_url +'" />\
+function addEvent(myData) {
+	business = myData.d;
+	eventName = myData.e;
+	eventUID = myData.b;
+
+	var appendStr = '<div class="event" data-toggle="modal" data-target="#myModal">\
+	<p><span style="font-size:1.3em;">' +eventName +"</span><br>"+ business.name + '<br>\
+	<img class="event_img" src="' + business.image_url +'" /></p>\
 	<div class="event_info">'
 	+ getRating(business) +
 	'</div>\
-	</li>';
+	</div>';
 	$('#events').append(appendStr);
 }
 
@@ -154,6 +189,7 @@ function sortByProximity() {
 	}
 
 	function distance(event) {
+		event = event.d;
 		var lat1 = event.location.coordinate.latitude;
 		var lon1 = event.location.coordinate.longitude;
 		var lat2 = userPosition.latitude;

@@ -41,6 +41,31 @@ function setListeners() {
 			console.log("no geolocation");
 			return;
 		}
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass_b.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+	});
+
+	$("#recommended").click(function() {
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up_b.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+	});
+
+	$("#date").click(function() {
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar_b.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire.png"/>';
+	});
+
+	$("#popular").click(function() {
+		document.getElementById('recommended').innerHTML = '<img  class="icon" src="icon/thumbs-up.png"/>';
+		document.getElementById('date').innerHTML = '<img class="icon" src="icon/calendar.png"/>';
+		document.getElementById('proximity').innerHTML = '<img class="icon" src="icon/compass.png"/>';
+		document.getElementById('popular').innerHTML = '<img class="icon" src="icon/fire_b.png"/>';
 	});
 }
 
