@@ -69,7 +69,7 @@ function setListeners() {
 	});
 }
 
-function getBusinessReviews(businessEvent) {
+function getBusinessReviews(businessEvent, eventUID) {
 
 	var oauth = OAuth({
 	    consumer: {
@@ -94,22 +94,30 @@ function getBusinessReviews(businessEvent) {
 	    type: request_data.method,
 	    data: oauth.authorize(request_data, token),
 	}).done(function(data) {
-	    addEvent(data);
-	    events.push(data);
+		myData = {d:data, b:eventUID, e:businessEvent.eventName}
+		console.log(myData);
+	    addEvent(myData);
+	    events.push(myData);
 	    console.log(events);
 
 	    $('#load').remove();
 	});
 }
 
-function addEvent(business) {
-	var appendStr = '<li class="event">\
-	<h2>' + business.name + '</h2>\
-	<img class="event_img" src="' + business.image_url +'" />\
+function addEvent(myData) {
+	business = myData.d;
+	eventName = myData.e;
+	eventUID = myData.b;
+
+	var appendStr = '<li class="event" data-toggle="modal" data-target="#myModal" id="'+eventUID+'">\
+	<p style="font-size:1.3em;">' + eventName + '</p><br>\
+	<p>' + business.name + '</p>\
+	<div class="myImageDiv"><img class="event_img" src="' + business.image_url +'" /></div>\
 	<div class="event_info">'
 	+ getRating(business) +
 	'</div>\
 	</li>';
+
 	$('#events').append(appendStr);
 }
 
@@ -183,6 +191,7 @@ function sortByProximity() {
 	}
 
 	function distance(event) {
+		event = event.d;
 		var lat1 = event.location.coordinate.latitude;
 		var lon1 = event.location.coordinate.longitude;
 		var lat2 = userPosition.latitude;

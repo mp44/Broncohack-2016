@@ -110,7 +110,7 @@ function addEvent(myData) {
 	eventUID = myData.b;
 
 	var appendStr = '<li class="event" data-toggle="modal" data-target="#myModal" id="'+eventUID+'">\
-	<p>' + eventName + '</p><br>\
+	<p style="font-size:1.3em;">' + eventName + '</p><br>\
 	<p>' + business.name + '</p>\
 	<div class="myImageDiv"><img class="event_img" src="' + business.image_url +'" /></div>\
 	<div class="event_info">'
@@ -119,6 +119,10 @@ function addEvent(myData) {
 	</li>';
 
 	$('#events').append(appendStr);
+	$("#"+eventUID).click(function() {
+		document.getElementById("modal_header").innerHTML = eventName;
+		document.getElementById("modal_body").innerHTML = eventName;
+	});
 }
 
 function getRating(business) {

@@ -35,6 +35,10 @@
         <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
         <script src="js/oauth-1.0a.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <title>Connect</title>
     </head>
     <body class="container-fluid">
@@ -50,14 +54,29 @@
         </div>
         
         <ul id="events"></ul>
-        <footer>
-            <ul id="control">
-                <li id="recommended"><img class="icon" src="icon/thumbs-up.png"/></li>
-                <li id="date"><img class="icon" src="icon/calendar.png"/></li>
-                <li id="proximity"><img class="icon" src="icon/compass.png"/></li>
-                <li id="popular"><img  class="icon" src="icon/fire.png"/></li>
-            </ul>
-        </footer>
+
+         <div id="control">
+            <div id="recommended"><img class="icon" src="icon/thumbs-up.png"/></div>
+            <div id="date" ><img class="icon" src="icon/calendar.png"/></div>
+            <div id="proximity" ><img class="icon" src="icon/compass.png"/></div>
+            <div id="popular"> <img class="icon" src="icon/fire.png"/></div>
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" id="modal_header">
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body" id="modal_body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer" id="modal_footer">
+                        <div type="button" class="btn btn-default" data-dismiss="modal">Close</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     <script type="text/javascript" src="js/explore_list_business.js"></script>
     </body>
 </html>

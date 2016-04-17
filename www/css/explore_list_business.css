@@ -1,18 +1,19 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
 
 .container-fluid{
     background-color: rgba(0, 0, 0, .9);
     background-image: url(../img/background.jpg);
 }
 
-html, body {
-	padding: 0;
-	margin: 0;
-}
-
 body {
 	background-repeat: repeat-x;
 	background-size: auto 100vh;
 	font-family: 'Raleway', sans-serif;
+	padding-left: 0px;
+    padding-right: 0px;
 }
 
 header {
@@ -23,7 +24,19 @@ header {
 
 h1 {
 	font-size: 3.5em;
-	margin: 0;
+	margin: 0px;
+}
+
+p{
+	display: inline;
+	margin: 0px;
+}
+
+.myImageDiv{
+	position: absolute;
+	display: inline;
+	right:0px;
+	top:0px;
 }
 
 #events {
@@ -35,14 +48,15 @@ h1 {
 }
 
 h2 {
-	font-size: 1em;
+	font-size: 13px;
 	display: inline-block;
-	margin: 0;
+	margin: 0px;
 }
 
 .event {
 	background-color: white;
 	width: 90vw;
+	height: 108px;
 	margin: 0 auto;
 	position: relative;
 	overflow: auto;
@@ -52,9 +66,11 @@ h2 {
 }
 
 .event_img {
-	float: right;
-	border-radius: 4px;
+	position: relative;
+	right: 4px;
+	top: 4px;
 }
+
 
 ::-webkit-scrollbar { 
     display: none; 
@@ -74,18 +90,19 @@ h2 {
 	margin-top: 20vh;
 }
 
+
 #control {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	position: absolute;
+	left: 0px;
+	position: fixed;
 	bottom: 0;
-	width: 100vw;
 	border-top: 1px solid white;
 	background-color: rgba(0, 0, 0, 0.7);	
 }
 
-#control > li {
+#control > div {
 	display: table-cell;
 	text-align: center;
 	width: 25vw;
