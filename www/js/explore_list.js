@@ -1,5 +1,7 @@
 
 $(document).ready(function() {
+	// listeners
+	setListeners();
 
 	var myFirebaseRef = new Firebase("https://connect-app.firebaseio.com/events");
 
@@ -10,6 +12,13 @@ $(document).ready(function() {
 		});
 	});
 });
+
+function setListeners() {
+	$("#logout").click(function() {
+		window.location.href = "index.html";
+		window.localStorage.clear();
+	});
+}
 
 function getBusinessReviews(businessEvent) {
 

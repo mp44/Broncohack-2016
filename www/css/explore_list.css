@@ -3,8 +3,12 @@ html, body {
 	margin: 0;
 }
 
+.container-fluid{
+    background-color: rgba(0, 0, 0, .9);
+    background-image: url(../img/background.jpg);
+}
+
 body {
-	background-image: url(../img/background.jpg);
 	background-repeat: repeat-x;
 	background-size: auto 100vh;
 	font-family: 'Raleway', sans-serif;
@@ -75,17 +79,27 @@ h2 {
 	margin: 0;
 	position: absolute;
 	bottom: 0;
-	padding-bottom: 10px;
 	width: 100vw;
 	border-top: 1px solid white;
-	background-color: rgba(0, 0, 0, 0.5);	
+	background-color: rgba(0, 0, 0, 0.7);	
 }
 
 #control > li {
 	display: table-cell;
 	text-align: center;
 	width: 25vw;
-	padding: 20px 0;
+	padding: 10px 0;
 	color: white;
 	font-size: 1.1em;
+}
+
+.icon {
+	height: 40px;
+	width: auto;
+}
+
+#logout {
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
 }

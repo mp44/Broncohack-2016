@@ -1,10 +1,15 @@
+
+.container-fluid{
+    background-color: rgba(0, 0, 0, .9);
+    background-image: url(../img/background.jpg);
+}
+
 html, body {
 	padding: 0;
 	margin: 0;
 }
 
 body {
-	background-image: url(../img/background.jpg);
 	background-repeat: repeat-x;
 	background-size: auto 100vh;
 	font-family: 'Raleway', sans-serif;
@@ -67,4 +72,41 @@ h2 {
 #load {
 	text-align: center;
 	margin-top: 20vh;
+}
+
+#control {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	border-top: 1px solid white;
+	background-color: rgba(0, 0, 0, 0.7);	
+}
+
+#control > li {
+	display: table-cell;
+	text-align: center;
+	width: 25vw;
+	padding: 10px 0;
+	color: white;
+	font-size: 1.1em;
+}
+
+.icon {
+	height: 40px;
+	width: auto;
+}
+
+#logout {
+	float: right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+#button_create_event {
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
 }

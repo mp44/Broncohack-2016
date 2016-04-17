@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/create_event.css" />
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        
+        <title>Connect</title>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+        <script src='https://cdn.firebase.com/js/client/2.1.0/firebase.js'></script>
+        <!-- BootStrap Include-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <!-- DatePicker and TimePickers -->
+        <link rel="stylesheet" type="text/css" href="js/datepicker/css/datepicker.css" />
+        <script type="text/javascript" src="js/datepicker/js/bootstrap-datepicker.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="js/clockpicker/dist/bootstrap-clockpicker.min.css">
+        <script type="text/javascript" src="js/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+
+    </head>
+    <body class="container-fluid">
+        <div>
+            <h3 class="white">Create an Event!</h3>
+        </div>
+
+        <label class="white">Type of Event</label>
+        <div class="row">
+            <div class="col-xs-3">
+                <div id="button_food" class="white">
+                    <h6>Food</h6>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="button_fun" class="white">
+                    <h6>Fun</h6>
+                </div> 
+            </div>
+            <div class="col-xs-3">
+                <div id="button_health" class="white">
+                    <h6>Health</h6>
+                </div> 
+            </div>
+            <div class="col-xs-3">
+                <div id="button_other" class="white">
+                    <h6>Other</h6>
+                </div> 
+            </div>
+        </div>
+
+        
+        <form>
+            <div class="form-group white">
+                <label for="inputEventName" class="form-control-label">Name of Event:</label>
+                <input type="text" class="form-control" id="inputEventName" placeholder="Event Title">
+
+                <label>Event Logistics:</label>
+                <input class="black form-control" id="inputDate" data-date="12-02-2012" placeholder="MM-DD-YYYY" data-date-format="mm-dd-yyyy"></input>
+                <div class="input-group clockpicker pull-center" data-align="top" data-autoclose="true">
+                    <input type="text" class="form-control" placeholder="End Time" id="inputStartTime">
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <div class="input-group clockpicker pull-center" data-align="top" data-autoclose="true">
+                    <input type="text" class="form-control" placeholder="End Time" id="inputEndTime">
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+
+                <label for="inputDescription">Description:</label>
+                <textarea class="form-control" rows="5" id="inputDescription" placeholder="Brief Description"></textarea>
+ 
+                <label for="inputTags">Hashtags:</label>
+                <textarea class="form-control" rows="3" id="inputHashtag" placeholder="Enter Some Hashtags"></textarea>
+                
+            </div>          
+        </form>
+
+        <div class="button_container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div id="button_back" class="white">
+                        <h4>Back</h4>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div id="button_create_event" class="white">
+                     <h4>Create</h4>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/create_event.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            $('#inputDate').datepicker();
+            $('.clockpicker').clockpicker()
+                .find('input').change(function(){
+                    console.log(this.value);
+                });
+                var input = $('#single-input').clockpicker({
+                placement: 'bottom',
+                align: 'left',
+                autoclose: true,
+                'default': 'now'
+            });
+        </script>
+    </body>
+</html>

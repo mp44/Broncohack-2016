@@ -144,12 +144,15 @@ function attemptCreateBusinessAccount(businessName, businessYelpID, businessAddr
             switch (error.code) {
               case "EMAIL_TAKEN":
                 console.log("The new user account cannot be created because the email is already in use.");
+                alert("The new user account cannot be created because the email is already in use.")
                 break;
               case "INVALID_EMAIL":
                 console.log("The specified email is not a valid email.");
+                alert("The specified email is not a valid email.");
                 break;
               default:
                 console.log("Error creating user:", error);
+                alert(("Error creating user:", error))
             }
         } else {
             console.log("Successfully created user account with uid:", userData.uid);
@@ -168,22 +171,23 @@ function attemptCreateBusinessAccount(businessName, businessYelpID, businessAddr
               }
             });
 
-
             /* CREATES TEST EVENT! */
             // var ref = new Firebase("https://connect-app.firebaseio.com/events/");
             // ref.push({
-            //   eventName:"Buffet Food!",
             //   businessName:"Bombay Gardens",
+            //   address: "540 Newhall Dr #10, San Jose, CA 95110",
             //   businessID:"san-jose-tofu-company-san-jose",
             //   userID: userData.uid,
-            //   address: "540 Newhall Dr #10, San Jose, CA 95110",
+            //   eventName:"Buffet Food!",
             //   date:"02/02/16",
-            //   startTime:"1:00PM",
-            //   endTime:"2:00PM",
-            //   description:"Eat my buffet!"
+            //   startTime:"13:00",
+            //   endTime:"14:00PM",
+            //   description:"Eat my buffet!",
+            //   hashtag:"#freefood",
+            //   category:"Food"
             // });
 
-            // location.href = "explore_list_business.html";
+            location.href = "explore_list_business.html";
         }
     });
 }
