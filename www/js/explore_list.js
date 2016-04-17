@@ -22,8 +22,8 @@ $(document).ready(function() {
 
 function setListeners() {
 	$("#logout").click(function() {
-		window.location.href = "index.html";
 		window.localStorage.clear();
+		window.location.href = "index.html";
 	});
 
 	$("#proximity").click(function() {

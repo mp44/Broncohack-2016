@@ -55,12 +55,13 @@ document.getElementById("button_back").onclick = function () {
 document.getElementById("button_login").onclick = function () {
     var email = document.getElementById('inputEmail').value;
     var password = document.getElementById('inputPassword').value;
+    console.log("Attempt Login Button clicked.");
     attemptLogin(email, password);
 };
 
 
 function attemptLogin(userEmail, userPassword){
-    //window.localStorage.clear();
+    window.localStorage.clear();
 
     var ref = new Firebase("https://connect-app.firebaseio.com/users/");
     ref.authWithPassword({
@@ -74,10 +75,7 @@ function attemptLogin(userEmail, userPassword){
         console.log(authData.password.email);
         console.log(authData.uid);
 
-        
         window.localStorage.setItem("userUID", authData.uid);
-
-
         
         var ref = new Firebase("https://connect-app.firebaseio.com/users/"+authData.uid+"/");
         ref.on("value", function(snapshot) {
